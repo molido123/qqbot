@@ -1,6 +1,5 @@
-from unittest.mock import NonCallableMagicMock
+#!/usr/bin/python3
 from flask import Flask, request
-import requests
 import api
 app = Flask(__name__)
 
@@ -20,6 +19,8 @@ def post_data():
         role=request.get_json().get('sender').get('role')
         msgId=request.get_json().get("message_id")
         print(request.get_json())
+        if(uid=="1121805630"):####  屏蔽自己防止形成递归
+            return "OK"
         api.keywordForGroup(message, gid, uid,nick,role,msgId)
     return 'OK'
 

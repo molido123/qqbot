@@ -1,4 +1,5 @@
 
+#!/usr/bin/python3
 import random
 
 def remake(rights=0):
@@ -22,6 +23,8 @@ def remakeCountry(rights=0):
     final=random.choices(list,weights=[39+int(rights),233],k=1)[0]
     res=random.choices(final,k=1)
     final_list=["中国",res[0]]
+    if rights<-100:
+        return random.choices(["古拉格群岛","地狱","河南"])[0] 
     return random.choices(final_list,weights=[114514,1919810])[0]
 
 def remakeSex():

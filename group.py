@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #group.py
 import json
 import requests
